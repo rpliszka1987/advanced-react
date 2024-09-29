@@ -4,7 +4,10 @@ import { useState } from 'react';
 const UseStateArray = () => {
   const [people, setPeople] = useState(data);
 
-  const removeItem = () => {
+  const removeItem = (id) => {
+    console.log(id)
+    const newPeople = people.filter((person) => person.id !== id)
+    setPeople(newPeople);
 
   }
 
@@ -20,7 +23,7 @@ const UseStateArray = () => {
         return (
           <div key={id}>
             <h4>{name}</h4>
-            <button type="button">Remove</button>
+            <button type="button" onClick={() => removeItem(id)}>Remove</button>
           </div>
 
         )
