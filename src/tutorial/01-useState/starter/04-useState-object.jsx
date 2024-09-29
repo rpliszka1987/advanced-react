@@ -11,7 +11,7 @@ const UseStateObject = () => {
   const displayPerson = () => {
     setPerson({name: 'John', age: 28, hobby: 'Playing basketball'})
   }
-
+  
   return (
     <>
       <h3>{person.name}</h3>
