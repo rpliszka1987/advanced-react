@@ -3,12 +3,11 @@ import { useState } from "react";
 const UseStateGotcha = () => {
   const [count, setCount] = useState(0)
   const handleIncrease = () => {
-    setCount((currentState) => {
-      const newState = currentState + 1;
-      return newState
-      
-    })
-    // console.log(count)
+    setTimeout(() => {
+      setCount((currentState) => {
+        return currentState + 1
+      })
+    }, 3000)
   }
   return (
     <>
