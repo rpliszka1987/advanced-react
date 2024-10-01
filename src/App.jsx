@@ -1,4 +1,4 @@
-import Start from '../src/tutorial/02-useEffect/starter/01-code-example'
+import Start from '../src/tutorial/02-useEffect/starter/02-useEffect-basics'
 
 function App() {
   return (
