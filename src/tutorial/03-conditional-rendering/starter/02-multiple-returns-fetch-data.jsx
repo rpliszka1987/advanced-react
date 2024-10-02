@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-const url = 'https://api.github.com/users/rpliszka1987';
+const url = 'https://api.github.com/users/QuincyLarson';
 
 const MultipleReturnsFetchData = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +10,15 @@ const MultipleReturnsFetchData = () => {
     const fetchUser = async () => {
       try {
         const resp = await fetch(url);
+        // This will render error if the url user not found.
+        if (!resp.ok) {
+          setIsError(true);
+          setIsLoading(false);
+          return;
+        }
         const user = await resp.json();
+        console.log(resp);
+
         setUser(user);
       } catch (error) {
         setIsError(true);
@@ -29,11 +37,17 @@ const MultipleReturnsFetchData = () => {
     return <h2>There was an error</h2>;
   }
 
-  return <div>
-    <img style={{width: '150px', borderRadius: '25px'}} src={user.avatar_url} alt={user.name} />
-    <h2>{user.name}</h2>
-    <h4>Works at {user.company}</h4>
-    <p>{user.bio}</p>
-  </div>
+  return (
+    <div>
+      <img
+        style={{ width: '150px', borderRadius: '25px' }}
+        src={user.avatar_url}
+        alt={user.name}
+      />
+      <h2>{user.name}</h2>
+      <h4>Works at {user.company}</h4>
+      <p>{user.bio}</p>
+    </div>
+  );
 };
 export default MultipleReturnsFetchData;
