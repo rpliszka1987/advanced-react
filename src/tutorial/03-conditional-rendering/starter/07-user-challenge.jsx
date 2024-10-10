@@ -1,17 +1,35 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const UserChallenge = () => {
   const [user, setUser] = useState(null);
 
-  const login = () => {
-    setUser({name: 'John', age: 25});
-  }
+  const handleLogin = () => {
+    setUser({ name: 'John' });
+  };
 
-  const logout = () => {
-    setUser(null)
-  }
+  const handleLogout = () => {
+    setUser(null);
+  };
 
-  return <h2>user challenge</h2>;
+  return (
+    <div>
+      {user ? (
+        <div>
+          <h4>Hello {user.name}</h4>
+          <button className="btn" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h4>Please login</h4>
+          <button className="btn" onClick={handleLogin}>
+            Login
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default UserChallenge;
