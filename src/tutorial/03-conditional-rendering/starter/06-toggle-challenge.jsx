@@ -12,7 +12,7 @@ const ToggleChallenge = () => {
       <h1>Welcome</h1>
       {isVisible ? <Hello /> : <Goodbye />}
       {console.log(isVisible)}
-      <button className="btn" type="button" onClick={habndleButton}>
+      <button className="btn btn-block" type="button" onClick={habndleButton}>
         {isVisible ? 'Hide' : 'Show'}
       </button>
     </div>
