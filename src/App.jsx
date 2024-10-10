@@ -1,4 +1,4 @@
-import Start from '../src/tutorial/03-conditional-rendering/starter/06-toggle-challenge';
+import Start from '../src/tutorial/03-conditional-rendering/starter/07-user-challenge';
 
 function App() {
   return (
