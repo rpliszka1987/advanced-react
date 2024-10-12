@@ -9,7 +9,18 @@ const CleanupFunction = () => {
       <button className="btn" onClick={() => setToggle(!toggle)}>
         toggle component
       </button>
-      {console.log(toggle)}
+      {toggle && <RandomComponent />}
+    </div>
+  );
+};
+
+const RandomComponent = () => {
+  useEffect(() => {
+    console.log('this is interesting');
+  }, []);
+  return (
+    <div>
+      <h2>Hello Robert</h2>
     </div>
   );
 };
