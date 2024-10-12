@@ -17,6 +17,13 @@ const CleanupFunction = () => {
 const RandomComponent = () => {
   useEffect(() => {
     console.log('this is interesting');
+    const intId = setInterval(() => {
+      console.log('hello from interval');
+    }, 1000);
+    // This is a cleanup function
+    return () => {
+      clearInterval(intId);
+    };
   }, []);
   return (
     <div>
